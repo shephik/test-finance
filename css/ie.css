@@ -1,0 +1,32 @@
+.header_link_arrow{
+  display: none;  
+}
+
+.ie_floater{
+	width: 525px;
+}
+.ie_floater li:nth-of-type(2),
+.ie_floater li:nth-of-type(1){
+	float: left;
+}
+.ie_floater li:nth-of-type(3){
+	float: right;
+}
+
+.ie_floater2{
+	width: 940px;
+}
+.ie_floater2 li:nth-of-type(1),
+.ie_floater2 li:nth-of-type(2),
+.ie_floater2 li:nth-of-type(4),
+.ie_floater2 li:nth-of-type(5){
+	float: left;
+}
+.ie_floater2 li:nth-of-type(3),
+.ie_floater2 li:nth-of-type(6){
+	float: right;
+}
+.ie_floater2 li:nth-of-type(1),
+.ie_floater2 li:nth-of-type(4){
+	margin-right: 20px;
+}
