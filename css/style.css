@@ -106,14 +106,21 @@ input{
 .main{
     position: relative;
 }
-
+.overflow{
+    height: 100vh;
+    overflow: hidden;
+}
+.inner{
+    height: 400vh;
+}
 .active {
-    position: absolute;
-    right:2%;
-    top:350px;
+    position: fixed;
+    right:7%;
+    top:50%;
     margin-top:-40px;
 }
-.active a {
+
+.active label {
     -webkit-border-radius: 50%;
             border-radius: 50%;
     display: block;
@@ -125,31 +132,46 @@ input{
     cursor: pointer;
     text-decoration: none;
 } 
-.slide4 .active a{
+
+#slide4:checked ~.active label{
     background: #ffffff;
 }
-.active a:hover{
+
+.active label:hover{
     width: 9px;
     height: 9px;
 }
 
-.slide1 .active a:nth-of-type(1),
-.slide2 .active a:nth-of-type(2), 
-.slide3 .active a:nth-of-type(3), 
-.slide4 .active a:nth-of-type(4){
+#slide1:checked ~.active label:nth-of-type(1),
+#slide2:checked ~.active label:nth-of-type(2), 
+#slide3:checked ~.active label:nth-of-type(3), 
+#slide4:checked ~.active label:nth-of-type(4){
     width: 10px;
     height: 10px;
     background: rgba(65,68,73,0);
     border:1px solid #414449;
 }
-.slide4 .active a:nth-of-type(4) {
+#slide4:checked ~.active label:nth-of-type(4) {
     border:1px solid #ffffff;
+}
+#slide1:checked ~ .overflow .inner { margin-top:0;}
+#slide2:checked ~ .overflow .inner { margin-top:-100vh; }
+#slide3:checked ~ .overflow .inner { margin-top:-200vh; }
+#slide4:checked ~ .overflow .inner { margin-top:-300vh; }
+
+#slide1:checked ~ .overflow .inner,
+#slide2:checked ~ .overflow .inner,
+#slide3:checked ~ .overflow .inner,
+#slide4:checked ~ .overflow .inner{
+    -webkit-transition: all 600ms ease-in-out;
+    -webkit-transition: all 800ms ease-in-out;
+    transition: all 800ms ease-in-out;
 }
 
 .slide1,.slide2,.slide3,.slide4 {
     width: 100%;
-    max-height: 700px;
-    height: 700px;
+    min-height: 700px;
+    height: 100vh;
     overflow: hidden;
     position: relative;
 }
